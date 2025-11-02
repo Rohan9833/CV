@@ -1,0 +1,128 @@
+/* --- DESKTOP STYLES (min-width: 992px) --- */
+@media (min-width: 992px) {
+    /* Navbar: Hide Toggler, Show Links */
+    .navbar-toggler {
+        display: none;
+    }
+
+    /* Hero Section: Default Desktop Layout */
+    .hero-section {
+        padding-top: 8rem !important;
+        padding-bottom: 8rem !important;
+    }
+
+    /* Text alignment remains left for desktop (as set by Bootstrap classes in HTML) */
+    .action-buttons, .social-icons {
+        justify-content: start !important;
+    }
+
+    /* Ensure image container is sized correctly on desktop */
+    .image-container {
+        width: 400px; /* Keep consistent with base */
+        height: 400px;
+    }
+
+    
+}
+
+
+/* --- MOBILE STYLES (max-width: 991.98px) --- */
+@media (max-width: 991.98px) {
+    /* Navbar: Hide Menu Links, Show Toggler */
+    .navbar-nav {
+        display: none !important; /* Hiding the links */
+    }
+    .navbar-toggler {
+        display: block; /* Showing the hamburger icon */
+        border: none;
+        padding: 0;
+        font-size: 1.5rem;
+    }
+    /* Adjust logo and hire me button position if needed */
+    .navbar-brand {
+        margin-right: auto;
+        margin-left: 1rem;
+    }
+    .hire-me-btn {
+        margin: 0 AUTO;
+    }
+    .download-cv-btn{
+        margin: 0 AUTO;
+    }
+
+
+    /* Hero Section: Mobile Layout - Image at bottom, Text center aligned */
+    .hero-section .row {
+        flex-direction: column-reverse; /* Puts image section below text section */
+        text-align: center; /* Center align text content */
+    }
+
+    /* Center align all inner elements */
+    .text-center {
+        text-align: center !important;
+    }
+    .action-buttons, .social-icons {
+        justify-content: center !important;
+    }
+
+    /* Adjust button width for better mobile stacking */
+    .action-buttons a {
+        flex: 1 1 45%; /* Buttons can take up half the width */
+        max-width: 180px;
+    }
+
+    /* Image Adjustments for Mobile */
+    .image-container {
+        width: 320px; /* Slightly smaller on mobile */
+        height: 320px;
+        margin-top: 2rem;
+        margin-bottom: 0;
+    }
+
+    /* Positioning the image lower and centered (key for mobile view) */
+    .d-flex.justify-content-center.justify-content-lg-end {
+        justify-content: center !important;
+        /* margin-bottom: -3rem; Removed, might push image too far down for circular container */
+        margin-bottom: 2rem; /* Give some space */
+    }
+
+    .stats-bar {
+        max-width: 350px;
+        margin: 2rem auto;
+    }
+
+    .about_right{
+        width: 100%;
+    }
+    .about_btn{
+        margin: 0 auto;
+        display: block;
+    }
+    .about_img {
+        height: 89%;
+        top: 52px;
+        left: -48px;
+    }
+    .about_left {
+        width: 100%;
+        overflow: hidden;
+        height: 508px;
+    }
+    .img_holder{
+        left: 5%;
+        top: 65px;
+    }
+    .img_holder::before {
+        content: '';
+        position: absolute;
+        background-color: var(--card_background);
+        width: 47%;
+        height: 93%;
+        z-index: -1;
+        border-radius: 120% 120% 0 0 / 60% 60% 0 0;
+        left: 6%;
+        top: 103px;
+    }
+
+
+}

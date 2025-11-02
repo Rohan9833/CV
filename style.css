@@ -1,0 +1,407 @@
+body{
+    background-color: #121212;
+    caret-color: transparent;
+}
+:root{
+    --card_background: #1b1b1b;
+    --main_orange: #FD6F00;
+    --orange_hover: #dd6000;
+}
+.section{
+    padding-bottom: 8rem !important;
+}
+
+/* Navbar Links Hover Effect */
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.text-warning {
+    color: #e66500 !important; /* Yellow for active/hover */
+}
+
+.navbar-nav .nav-link {
+    color: #f8f9fa !important; /* White for inactive */
+    transition: color 0.3s ease;
+}
+
+/* Hire Me Button - Orange/Warning color */
+.hire-me-btn {
+    background-color: #e66500; /* Custom orange */
+    border-color: #ff8c00;
+    color: #000;
+    font-weight: 600;
+}
+.hire-me-btn:hover {
+    background-color: #e66400d3;
+    border-color: #e67e00;
+    color: #000;
+}
+
+/* Download CV Button */
+.download-cv-btn {
+    border-color: #444;
+    color: #f8f9fa;
+}
+.download-cv-btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Social Icons Styling */
+.social-icon {
+    font-size: 1.5rem;
+    color: #BABABA; /* White/Light color */
+    transition: color 0.3s ease;
+    padding:3px  10px 3px 10px;
+}
+.social_media{
+    border: 2px solid #BABABA;
+    border-radius: 50%;
+    background-color: #2a2a2a99;
+}
+
+.social-icon:hover {
+    color: #ff8c00; /* Orange/Warning on hover */
+}
+.social_media:hover {
+    border: 2px solid #ff8c00; /* Orange/Warning on hover */
+}
+
+
+.stats-bar{
+    padding: 5px 0;
+    background-color: #1B1B1B;
+}
+
+
+
+
+
+
+/* --- IMAGE CONTAINER STYLES (Common) --- */
+.image-container {
+    position: relative;
+    width: 450px; /* Base size */
+    height: 450px;
+    /* overflow: hidden; Clip image to the circular container */
+    border-radius: 50%; /* Make the container itself circular */
+    z-index: 1;
+    
+}
+
+.profile-img {
+    /* Original values: width: 200%; height: 200%; */
+    /* Adjust these values to control the zoom level and positioning */
+    width: 63%; /* Less zoom than 200% */
+    height: 124%; /* Less zoom than 200% */
+    object-fit: cover;
+    /* border-radius: 50%; Removed, as container is now circular */
+    filter: grayscale(100%);
+    position: absolute;
+    /* Original values: top: -30%; left: 50%; transform: translateX(-50%); */
+    /* Adjust top to position the head/upper body correctly within the circle */
+    top: -24%; /* Adjust as needed. -10% se -20% ke beech try kar sakte ho */
+    left: 48%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* Background Circle Effect (For the big dark circle behind the image) */
+/* This is no longer needed if .image-container itself defines the circular shape and background */
+/* Agar Image 1 mein image ke peeche ek bada dark circle hai, toh isko rakhenge.
+   Lekin aapne jo Image 1 di hai, usme dark background hi hai aur image uspar placed hai.
+   Toh, isko hata sakte hain ya iska size adjust kar sakte hain. */
+.image-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* width: 120%; height: 120%; */
+    /* Set to 100% to match container, or slightly larger if you want a border effect */
+    width: 100%;
+    height: 100%;
+    background-color: var(--card_background); /* Dark background color */
+    border-radius: 50%;
+    z-index: 0; /* Behind the image */
+}
+
+
+.web_designer{
+    font-size: 4rem;
+    color: var(--main_orange);
+}
+
+.service-card-custom{
+    background-color:var(--card_background) ;
+    color: var(--main_orange);
+    height: 240px;
+}
+
+.about_left{
+    overflow: hidden;
+    height: 598PX;;
+    width: 50%;
+}
+
+.img_holder{
+    filter: grayscale(100%);
+    position: relative;
+    width: 450px;
+    height: 450px;
+
+}
+
+.img_holder::before{
+    content: '';
+    position: absolute;
+    background-color: var(--card_background);
+    width: 74%;
+    height: 119%;
+    z-index: -1;
+    border-radius: 120% 120% 0 0 / 60% 60% 0 0;
+    left: 12%;
+    top: 65px;
+    
+}
+
+.about_img{
+    position: absolute;  
+    height: 136%;
+    left: -17%;
+    
+}
+
+.about_right{
+    width: 50%;
+}
+
+.about_btn{
+    background-color: var(--main_orange);
+    color: white;
+    border: none;
+}
+.about_btn:hover{
+    background-color: var(--orange_hover);
+}
+
+
+
+/* Dark background for the overall section, like in the image */
+.skill-chart-container {
+    /* padding: 40px 20px; */
+    border-radius: 10px;
+    /* Optional: To match the image's overall look, ensure the main body also has a dark background */
+    /* If you want the background to be completely black, use #000 */
+}
+
+.skill-row {
+    max-width: 900px; /* To center and limit width if needed */
+    margin: 0 auto;
+}
+
+.skill-item {
+    width: 150px; /* Width for each skill column */
+    /* Add a bit of gap between items for better look on small screens */
+    margin-bottom: 20px; 
+}
+
+/* 1. Main Circle Container */
+.circular-progress {
+    position: relative;
+    width: 120px; /* Diameter of the circle */
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Base color for the un-filled part */
+    background: var(--card_background); 
+}
+
+/* 2. Progress Bar Logic using data-progress and conic-gradient */
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Use conic-gradient to draw the progress */
+    /* We calculate the degree: (data-progress / 100) * 360 */
+    background: conic-gradient(
+        #ff7a00 var(--progress-degree), /* Orange color for filled part */
+        #333 var(--progress-degree) /* Base color for unfilled part */
+    );
+    /* Initial state, to be updated by the data-progress in JavaScript (optional) 
+       For pure CSS, we need separate classes, but using 'style' attribute in HTML is easier
+       Example: style="--progress-degree: 360deg;" for 100%
+    */
+    /* For the image, we will set the style directly in HTML for simplicity */
+}
+
+/* 3. The Inner Circle/Hole (The mask) */
+.circular-progress::after {
+    content: '';
+    position: absolute;
+    width: 85%; /* Inner circle size (creates the ring thickness) */
+    height: 85%;
+    border-radius: 50%;
+    background: #1a1a1a; /* Same as the background of the main container */
+    z-index: 1; 
+}
+
+/* 4. Icon/Text Placeholder (Center of the ring) */
+.icon-placeholder {
+    position: relative;
+    z-index: 2; /* To appear above the inner circle */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 20px; /* For the main icon text */
+    color: #ff7a00; /* Orange color for the icon/text */
+    font-weight: bold;
+}
+
+/* Adjustments for the specific text icons (Xd, Ps, Ai, Pr) */
+.icon-text {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+
+/* Container ka dark background set karna zaroori hai */
+.portfolio-section-container {
+    background-color: #1a1a1a; /* Dark background */
+    padding: 60px 20px;
+    /* Agar yeh kisi bade div ke andar hai, toh yeh sirf uss div ko style karega */
+}
+
+/* 1. Filter Buttons Style */
+.portfolio-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    margin: 0 5px;
+    font-size: 14px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.portfolio-btn:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+/* Active/Orange Button */
+.portfolio-btn.active {
+    background-color: #ff7a00; /* Orange color */
+    color: #fff;
+    border: 1px solid #ff7a00;
+}
+
+/* 2. Project Card Style */
+.project-card {
+    background-color: #0d0d0d; /* Slightly darker than main background */
+    border-radius: 10px;
+    overflow: hidden; /* Important for sharp corners */
+}
+
+/* Placeholder for the image/design area */
+.project-image-placeholder {
+    height: 300px; /* Card ki height isse set hogi */
+    background-size: cover;
+    background-position: center top; /* Image ko upar se dikhane ke liye */
+    /* Hum yahan dummy background images use kar rahe hain */
+    background-color: #222; 
+}
+
+/* Dummy Images ke liye, taaki thoda image jaisa feel aaye */
+.item-1 {
+    background-image: url('https://picsum.photos/400/300?random=1');
+}
+.item-2 {
+    background-image: url('https://picsum.photos/400/300?random=2');
+}
+.item-3 {
+    background-image: url('https://picsum.photos/400/300?random=3');
+}
+
+/* Project Info Bar Style */
+.project-info {
+    background-color: #1a1a1a;
+    border-top: 1px solid #282828;
+    font-size: 14px;
+}
+
+
+
+/* Main Container ka dark background */
+.contact-section-container {
+    background-color: #000; /* Pure black background */
+    max-width: 800px; /* Thoda chota rakhte hain taaki form centered aur focused lage */
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+/* Custom Input Fields */
+.custom-input {
+    background-color: #222; /* Darker than background */
+    color: #fff;
+    border: 1px solid #333;
+    padding: 15px 10px; /* Thoda zyada padding taaki bada dikhe */
+    border-radius: 5px;
+    height: 55px; /* Fixed height for consistency */
+}
+
+/* Placeholder text color set karna */
+.custom-input::placeholder {
+    color: #999;
+}
+
+/* Focus hone par border color change karna */
+.custom-input:focus {
+    background-color: #333;
+    color: #fff;
+    border-color: #ff7a00; /* Orange highlight on focus */
+    box-shadow: 0 0 0 0.25rem rgba(255, 122, 0, 0.25); /* Subtle orange glow */
+}
+
+/* Dropdown (Select) ka special style */
+.custom-select {
+    /* Select fields ke default appearance ko override karna */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23999999' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 12px;
+}
+
+/* Project Details (Textarea) ki height badhana */
+.large-textarea {
+    height: 125px; /* Jaise image mein dikh raha hai */
+    resize: none; /* User resize na kar paaye */
+}
+
+/* Send Button Style */
+.btn-send {
+    background-color: transparent; /* Transparent background */
+    color: #fff;
+    border: 1px solid #999; /* Light border */
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-send:hover {
+    background-color: #ff7a00; /* Orange background on hover */
+    border-color: #ff7a00;
+    color: #fff;
+}
+
